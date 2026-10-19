@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>وصية الرسول  Shosho ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="hearts">💕 ❤️ 💗 💖 💕</div>
+
+    <main class="container">
+
+        <div class="heart">💗</div>
+
+        <h1>حكايتنا ❤️</h1>
+
+        <p>في حكايات بتبدأ بالصدفة وبتكمل بالعمر كله</p>
+        <div class="love-date">
+    <h2>💕 حكايتنا بدأت هنا 💕</h2>
+    <p class="date">📅 5 / 7 / 2026</p>
+    <p>من اليوم ده بدأت أجمل حكاية في حياتي ❤️</p>
+    <p>ويا رب نفضل مع بعض العمر كله يا عمري 🥹💗</p>
+</div>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="اكتبي كلمة السر"
+        >
+
+        <button onclick="unlockLove()">
+            ❤️ Unlock ❤️
+        </button>
+
+        <p id="message"></p>
+
+        <section id="loveLetter" hidden>
+            <h2>إلى أجمل شخص في حياتي 💌</h2>
+
+            <p>
+                انا عملت الهديه دي علشان عايز اقولك اني بحبكك 
+                انا بحب كلامنا سوا هزارنا وكل حاجة بينا بحب
+                كلامك ليا بحب كل حاجه فيكي مهما اوصفلك
+                انا بحبك قد اي مش هخلص بس اللي اعرفه انك 
+                غاليه اوي عندي واني بحبك 
+                وربنا يخخليكي ليا وميحرمنيش منك ابدا ي نور عيني ❤️
+                وجودك في حياتي أجمل حاجة حصلتلي،
+                وكل يوم بيعدي بحس إنك أغلى عندي من اليوم اللي قبله.
+                ❤️
+            </p>
+            <div id="musicplayer" hidden>
+            <h2>اغنية لينا🎵</h2>
+            <audio id="my audio"controls loop>
+                <source src="./music.mp3" type="audio/mp3">
+            </audio>
+
+            </div>
+            
+
+              <button onclick="nextMessage()">
+                Next 💕
+            </button>
+        </section>
+
+    </main>
+    <!-- صفحة الصور -->
+<section id="memories" hidden>
+    <h2>صور ذكرياتنا ❤️📸</h2>
+
+    <div class="photo-gallery">
+        <img src="media/WhatsApp Image 2026-10-14 at 12.19.14 AM.jpeg"
+             alt="صورتنا الأولى"
+             onclick="openPhoto(this.src)">
+
+        <img src="media/WhatsApp Image 2026-10-14 at 12.19.23 AM.jpeg"
+             alt="صورتنا الثانية"
+             onclick="openPhoto(this.src)">
+
+        <img src="media/WhatsApp Image 2026-10-14 at.jpeg"
+             alt="صورتنا الثالثة"
+             style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+             onclick="openPhoto(this.src)">
+             <img src="media/WhatsApp Image 2026-10-19 at 8.27.37 PM.jpeg"
+             alt="صورتنا الرايعه"
+              style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+             onclick="openPhoto(this.src)">
+             <img src="media/WhatsApp Image 2026-10-19 at 8.27.38 PM.jpeg"
+             alt="صورتنا الخامسه"
+             onclick="openPhoto(this.src)"
+              style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+    </div>
+
+    <button onclick="showVideos()">شوفي فيديوهاتنا 🎬❤️</button>
+</section>
+
+<!-- صفحة الفيديوهات -->
+<section id="videosPage" hidden>
+    <h2>فيديوهات ذكرياتنا 🎬❤️</h2>
+
+    <div class="video-gallery">
+        <video controls>
+            <source src="media/WhatsApp Video 2026-10-14 at 12.19.13 AM.mp4"
+                    type="video/mp4">
+        </video>
+
+        <video controls>
+            <source src="media/WhatsApp Video 2026-10-14 at 12.19.23 AM.mp4"
+                    type="video/mp4">
+        </video>
+        <video controls>
+            <source src="media/WhatsApp Video 2026-10-19 at 8.27.54 PM.mp4"
+                    type="video/mp4">
+        </video>
+        <video controls>
+            <source src="media/WhatsApp Video 2026-10-19 at 8.28.56 PM.mp4"
+                    type="video/mp4">
+        </video>
+    </div>
+
+    <button onclick="backToPhotos()">الرجوع للصور 📸</button>
+</section>
+
+<!-- تكبير الصور -->
+<div id="photoViewer" onclick="closePhoto()" style="display:none;">
+    <img id="expandedPhoto" alt="صورة مكبرة">
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>

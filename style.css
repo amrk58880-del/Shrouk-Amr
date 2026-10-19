@@ -1,0 +1,628 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background:
+        radial-gradient(circle at top left, #ffe0ec, transparent 45%),
+        linear-gradient(135deg, #ffc1d6, #f7d9ff, #fff0f5);
+
+    color: #873653;
+}
+.container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 430px;
+    padding: 40px 28px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px rgba(176, 65, 113, 0.18);
+    animation: appear 1s ease;
+}
+
+.heart {
+    font-size: 75px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 8px 15px #f7a4c5);
+    animation: heartbeat 1.3s infinite;
+}
+
+h1 {
+    font-size: 34px;
+    margin-bottom: 14px;
+    color: #d63376;
+}
+
+.container > p {
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0 15px;
+    border: 1px solid #f1b0cb;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #e84d91;
+    box-shadow: 0 0 0 4px #fce0ec;
+}
+
+button {
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff5796, #d63376);
+    box-shadow: 0 8px 20px #e66b9b55;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px #e66b9b77;
+}
+
+#message {
+    margin-top: 15px;
+    color: #c52c6d;
+}
+
+#loveLetter {
+    margin-top: 25px;
+    padding: 22px 18px;
+    border-radius: 22px;
+    background: #fff3f8;
+    line-height: 2;
+    animation: appear 0.6s ease;
+}
+
+#loveLetter h2 {
+    color: #d63376;
+    margin-bottom: 10px;
+}
+
+#loveLetter button {
+    margin-top: 15px;
+}
+
+.hearts {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    pointer-events: none;
+    font-size: 25px;
+    opacity: 0.65;
+}
+
+.hearts {
+    animation: floating 5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.13); }
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-35px); }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+}
+/* قسم الذكريات */
+#memories {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+    color: #873653;
+    box-sizing: border-box;
+}
+
+#memories h2 {
+    color: #d63376;
+    font-size: 28px;
+    margin: 25px 0 15px;
+}
+
+#memories p {
+    color: #873653;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+#memories[hidden] {
+    display: none !important;
+}
+
+
+/* ألبوم الصور */
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.photo-card {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 2px solid #ffb6d5;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.photo-card img:hover {
+    transform: scale(1.05);
+}
+
+/* الفيديوهات */
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.video-gallery video {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    max-height: 450px;
+    border-radius: 16px;
+    background: #000;
+}
+
+/* عارض الصور المكبرة */
+#photoViewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#photoViewer img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.close-photo {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* توافق مع الموبايل */
+@media (max-width: 480px) {
+    #memories {
+        padding: 12px;
+    }
+
+    #memories h2 {
+        font-size: 23px;
+    }
+
+    .photo-gallery {
+        gap: 10px;
+    }
+
+    .photo-card img {
+        height: 170px;
+    }
+}
+/* ضبط الموقع على الموبايل */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.container,
+.card,
+.love-letter,
+#loveLetter {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .card,
+    .love-letter,
+    #loveLetter {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1 {
+        font-size: 26px;
+        overflow-wrap: anywhere;
+    }
+
+    p {
+        overflow-wrap: anywhere;
+        line-height: 1.7;
+    }
+
+    button,
+    input {
+        max-width: 100%;
+    }
+
+    video,
+    img {
+        display: block;
+    }
+}
+.container {
+    width: calc(100% - 30px);
+    max-width: 430px;
+    margin: 30px auto;
+    flex-shrink: 0;
+}
+
+.container h1 {
+    line-height: 1.5;
+}
+
+.container input {
+    color: #873653;
+}
+
+.container button {
+    min-height: 48px;
+}
+
+#loveLetter {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 28px 18px;
+        border-radius: 24px;
+    }
+
+    .heart {
+        font-size: 60px;
+    }
+
+    .container h1 {
+        font-size: 26px;
+    }
+
+    #memories {
+        padding: 10px;
+    }
+
+    .photo-card img {
+        height: 160px;
+    }
+}
+/* صفحات الصور والفيديوهات */
+#memories,
+#videosPage {
+width: 100%;
+max-width: 600px;
+margin: 30px auto;
+padding: 20px;
+text-align: center;
+position: relative;
+z-index: 2;
+}
+
+/* إخفاء الصفحات */
+#memories[hidden],
+#videosPage[hidden] {
+display: none !important;
+}
+
+/* عناوين الصفحات */
+#memories h2,
+#videosPage h2 {
+color: #d63376;
+margin: 20px 0;
+font-size: 25px;
+}
+
+#memories p,
+#videosPage p {
+line-height: 1.8;
+margin-bottom: 20px;
+}
+
+/* الصور تحت بعضها */
+.photo-gallery {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 25px;
+width: 100%;
+margin: 25px auto;
+}
+
+.photo-card {
+width: 100%;
+overflow: hidden;
+border-radius: 18px;
+border: 2px solid #ffb6d5;
+box-shadow: 0 5px 18px #e66b9b33;
+}
+
+.photo-card img {
+display: block;
+width: 100%;
+height: auto;
+max-height: 600px;
+object-fit: contain;
+cursor: pointer;
+}
+
+/* الفيديوهات تحت بعضها */
+.video-gallery {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 25px;
+width: 100%;
+margin: 25px auto;
+}
+
+.video-gallery video {
+display: block;
+width: 100%;
+max-width: 560px;
+height: auto;
+border-radius: 18px;
+background: #000;
+}
+
+/* أزرار التنقل */
+#memories button,
+#videosPage button {
+margin: 20px 0;
+}
+
+/* مناسب للموبايل */
+@media (max-width: 480px) {
+#memories,
+#videosPage {
+padding: 12px;
+}
+
+.photo-gallery,
+.video-gallery {
+    gap: 18px;
+}
+
+.photo-card img {
+    max-height: 450px;
+}
+
+}
+/* إخفاء الأقسام غير النشطة */
+[hidden] {
+    display: none !important;
+}
+
+/* صفحة الصور */
+#memories {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* الصور تحت بعضها */
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.photo-gallery img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+/* صفحة الفيديوهات */
+#videosPage {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+/* الفيديوهات تحت بعضها */
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.video-gallery video {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* الأزرار */
+#memories button,
+#videosPage button {
+    margin: 25px 0;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* تكبير الصورة */
+#photoViewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 15px;
+}
+
+#expandedPhoto {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+[hidden] {
+    display: none !important;
+}
+
+#memories,
+#videosPage {
+    width: 100%;
+    text-align: center;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-gallery img,
+.video-gallery video {
+    width: 90%;
+    max-width: 500px;
+}
+.love-date {
+    margin: 25px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 2px solid #ff9abb;
+    border-radius: 20px;
+    text-align: center;
+    color: #873653;
+    box-shadow: 0 5px 20px rgba(255, 105, 150, 0.2);
+}
+
+.love-date h2 {
+    color: #e75480;
+    margin-bottom: 15px;
+}
+
+.love-date .date {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63384;
+    margin: 15px 0;
+}
