@@ -1,138 +1,339 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>وصية الرسول  Shosho ❤️</title>
+        <title>وصية الرسول  Shosho ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-<body>
+    <body>
 
-    <div class="hearts">💕 ❤️ 💗 💖 💕</div>
+        <div class="hearts">💕 ❤️ 💗 💖 💕</div>
 
-    <main class="container">
+        <main class="container">
 
-        <div class="heart">💗</div>
+            <div class="heart">💗</div>
 
-        <h1>حكايتنا ❤️</h1>
+            <h1>حكايتنا ❤️</h1>
 
-        <p>في حكايات بتبدأ بالصدفة وبتكمل بالعمر كله</p>
-        <div class="love-date">
-    <h2>💕 حكايتنا بدأت هنا 💕</h2>
-    <p class="date">📅 5 / 7 / 2026</p>
-    <p>من اليوم ده بدأت أجمل حكاية في حياتي ❤️</p>
-    <p>ويا رب نفضل مع بعض العمر كله يا عمري 🥹💗</p>
-</div>
+            <p>في حكايات بتبدأ بالصدفة وبتكمل بالعمر كله</p>
+            <div class="love-date">
+        <h2>💕 حكايتنا بدأت هنا 💕</h2>
+        <p class="date">📅 5 / 7 / 2026</p>
+        <p>من اليوم ده بدأت أجمل حكاية في حياتي ❤️</p>
+        <p>ويا رب نفضل مع بعض العمر كله يا عمري 🥹💗</p>
+    </div>
 
-        <input
-            type="password"
-            id="password"
-            placeholder="اكتبي كلمة السر"
-        >
+            <input
+                type="password"
+                id="password"
+                placeholder="اكتبي كلمة السر"
+            >
 
-        <button onclick="unlockLove()">
-            ❤️ Unlock ❤️
+            <button onclick="unlockLove()">
+                ❤️ Unlock ❤️
+            </button>
+
+            <p id="message"></p>
+
+            <section id="loveLetter" hidden>
+                <h2>إلى أجمل شخص في حياتي 💌</h2>
+
+                <p>
+                    انا عملت الهديه دي علشان عايز اقولك اني بحبكك 
+                    انا بحب كلامنا سوا هزارنا وكل حاجة بينا بحب
+                    كلامك ليا بحب كل حاجه فيكي مهما اوصفلك
+                    انا بحبك قد اي مش هخلص بس اللي اعرفه انك 
+                    غاليه اوي عندي واني بحبك 
+                    وربنا يخخليكي ليا وميحرمنيش منك ابدا ي نور عيني ❤️
+                    وجودك في حياتي أجمل حاجة حصلتلي،
+                    وكل يوم بيعدي بحس إنك أغلى عندي من اليوم اللي قبله.
+                    ❤️
+                </p>
+                <div id="musicplayer" hidden>
+                <h2>اغنية لينا🎵❤️</h2>
+                <audio id="myAudio"controls loop>
+                    <source src="./music.mp3" type="audio/mp3">
+                </audio>
+                </div>
+                <!-- عداد حكايتنا -->
+<section id="loveCounter" class="love-counter" hidden>
+    <h2>⏳ بقالنا قد إيه في حكايتنا؟ ❤️</h2>
+
+    <div class="counter-box">
+        <div>
+            <span id="days">0</span>
+            <small>يوم 💗</small>
+        </div>
+
+        <div>
+            <span id="hours">0</span>
+            <small>ساعة</small>
+        </div>
+
+        <div>
+            <span id="minutes">0</span>
+            <small>دقيقة</small>
+        </div>
+
+        <div>
+            <span id="seconds">0</span>
+            <small>ثانية</small>
+        </div>
+    </div>
+
+    <p>وكل ثانية بتعدي بحبك أكتر يا شوشو ❤️</p>
+</section>
+
+<!-- الهدية المفاجأة -->
+<section id="surpriseGift" class="surprise-gift" hidden>
+    <h2>عندي ليكي مفاجأة يا شوشو 🎁❤️</h2>
+
+    <button id="giftButton" class="gift-button"
+            onclick="openGift()"
+            aria-label="افتحي هديتك">
+        🎁
+    </button>
+
+    <p>اضغطي على الهدية يا أجمل هدية في حياتي 💕</p>
+
+    <div id="giftMessage" class="gift-message" hidden>
+        <h3>مفاجأة لأجمل بنت في الدنيا 💖</h3>
+
+        <p>
+            يا شوشو، لو هقدر أديكي حاجة واحدة في الدنيا،
+            هديكي القدرة إنك تشوفي نفسك بعيوني،
+            علشان تعرفي إنتِ غالية عندي قد إيه. 🥹❤️
+        </p>
+
+        <p>
+            إنتِ مش مجرد شخص بحبه،
+            إنتِ حكاية نفسي أكملها معاكي العمر كله.
+            ربنا يخليكي ليا ويفرح قلبك دايمًا يا نور عيني. 💍💕
+        </p>
+
+        <div class="gift-hearts">💗 💖 💕 💘 💝</div>
+    </div>
+    <!-- زر صفحة الرسائل -->
+<section id="messagesEntry" class="messages-entry" hidden>
+    <h2>💌 عندي ليكي كلام من قلبي</h2>
+
+    <p>كل رسالة هنا معمولة مخصوص علشانك يا شوشو ❤️</p>
+
+    <button onclick="openMessagesPage()">
+        رسائل من عمرو ❤️
+    </button>
+</section>
+</section>
+
+                <button onclick="nextMessage()">
+                    Next 💕
+                </button>
+            </section>
+
+        </main>
+        <!-- صفحة الصور -->
+    <section id="memories" hidden>
+        <h2>صور ذكرياتنا ❤️📸</h2>
+
+        <div class="photo-gallery">
+            <img src="media/WhatsApp Image 2026-10-14 at 12.19.14 AM.jpeg"
+                alt="صورتنا الأولى"
+                onclick="openPhoto(this.src)">
+
+            <img src="media/WhatsApp Image 2026-10-14 at 12.19.23 AM.jpeg"
+                alt="صورتنا الثانية"
+                onclick="openPhoto(this.src)">
+
+            <img src="media/WhatsApp Image 2026-10-14 at.jpeg"
+                alt="صورتنا الثالثة"
+                style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+        onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+                onclick="openPhoto(this.src)">
+                <img src="media/WhatsApp Image 2026-10-19 at 8.27.37 PM.jpeg"
+                alt="صورتنا الرايعه"
+                style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+        onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+                onclick="openPhoto(this.src)">
+                <img src="media/WhatsApp Image 2026-10-19 at 8.27.38 PM.jpeg"
+                alt="صورتنا الخامسه"
+                onclick="openPhoto(this.src)"
+                style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
+        onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+        </div>
+
+        <button onclick="showVideos()">شوفي فيديوهاتنا 🎬❤️</button>
+    </section>
+
+    <!-- صفحة الفيديوهات -->
+    <section id="videosPage" hidden>
+        <h2>فيديوهات ذكرياتنا 🎬❤️</h2>
+
+        <div class="video-gallery">
+            <video controls>
+                <source src="media/WhatsApp Video 2026-10-14 at 12.19.13 AM.mp4"
+                        type="video/mp4">
+            </video>
+
+            <video controls>
+                <source src="media/WhatsApp Video 2026-10-14 at 12.19.23 AM.mp4"
+                        type="video/mp4">
+            </video>
+            <video controls>
+                <source src="media/WhatsApp Video 2026-10-19 at 8.27.54 PM.mp4"
+                        type="video/mp4">
+            </video>
+            <video controls>
+                <source src="media/WhatsApp Video 2026-10-19 at 8.28.56 PM.mp4"
+                        type="video/mp4">
+            </video>
+        </div>
+
+        <button onclick="backToPhotos()">الرجوع للصور 📸</button>
+    </section>
+
+    <!-- تكبير الصور -->
+    <div id="photoViewer" onclick="closePhoto()" style="display:none;">
+        <img id="expandedPhoto" alt="صورة مكبرة">
+    </div>
+    <!-- صفحة رسائل من عمرو -->
+<section id="messagesPage" class="messages-page" hidden>
+
+    <div class="messages-card">
+
+        <div class="messages-heart">💌</div>
+
+        <h2>رسائل من عمرو ❤️</h2>
+
+        <p class="messages-intro">
+            يا شوشو، اختاري اللي حاساه دلوقتي،
+            وسيبيلي أطبطب على قلبك بكلمتين من قلبي ليكي 🥹💗
+        </p>
+
+        <div class="mood-buttons">
+
+            <button onclick="showMoodMessage('sad')">
+                🥺 أنا زعلانة
+            </button>
+
+            <button onclick="showMoodMessage('upset')">
+                😔 أنا مضايقة منك
+            </button>
+
+            <button onclick="showMoodMessage('happy')">
+                💗 أنا مبسوطة
+            </button>
+
+            <button onclick="showMoodMessage('miss')">
+                🥹 إنت وحشتني
+            </button>
+
+            <button onclick="showMoodMessage('love')">
+                ❤️ محتاجة أسمع كلام حلو
+            </button>
+
+        </div>
+
+        <div id="moodMessage" class="mood-message" hidden>
+            <div id="moodEmoji">💗</div>
+            <p id="moodText"></p>
+
+            <button class="another-message"
+                    onclick="showAnotherMessage()">
+                رسالة كمان يا قلبي 💌
+            </button>
+        </div>
+        <button onclick="openLoveQuiz()">
+    🎮 مين يعرف التاني أكتر؟
+</button>
+
+        <button class="back-messages"
+                onclick="closeMessagesPage()">
+            رجوع لمفاجآتي ❤️
         </button>
 
-        <p id="message"></p>
+    </div>
 
-        <section id="loveLetter" hidden>
-            <h2>إلى أجمل شخص في حياتي 💌</h2>
+</section>
+<!-- لعبة مين يعرف التاني أكتر ❤️ -->
+<section id="loveQuizPage" class="love-quiz-page" hidden>
+
+    <div class="quiz-card">
+
+        <h1>💑 مين يعرف التاني أكتر؟</h1>
+
+        <p class="quiz-intro">
+            يلا نشوف مين فينا حافظ التاني أكتر يا شوشو ❤️
+        </p>
+
+        <div id="quizStart">
+            <div class="quiz-heart">💗</div>
 
             <p>
-                انا عملت الهديه دي علشان عايز اقولك اني بحبكك 
-                انا بحب كلامنا سوا هزارنا وكل حاجة بينا بحب
-                كلامك ليا بحب كل حاجه فيكي مهما اوصفلك
-                انا بحبك قد اي مش هخلص بس اللي اعرفه انك 
-                غاليه اوي عندي واني بحبك 
-                وربنا يخخليكي ليا وميحرمنيش منك ابدا ي نور عيني ❤️
-                وجودك في حياتي أجمل حاجة حصلتلي،
-                وكل يوم بيعدي بحس إنك أغلى عندي من اليوم اللي قبله.
-                ❤️
+                جاوب على الأسئلة واكتشفوا قد إيه
+                كل واحد فيكم عارف التاني!
             </p>
-            <div id="musicplayer" hidden>
-            <h2>اغنية لينا🎵</h2>
-            <audio id="my audio"controls loop>
-                <source src="./music.mp3" type="audio/mp3">
-            </audio>
 
-            </div>
-            
-
-              <button onclick="nextMessage()">
-                Next 💕
+            <button onclick="startLoveQuiz()">
+                نبدأ اللعبة ❤️
             </button>
-        </section>
+        </div>
 
-    </main>
-    <!-- صفحة الصور -->
-<section id="memories" hidden>
-    <h2>صور ذكرياتنا ❤️📸</h2>
+        <div id="quizGame" hidden>
 
-    <div class="photo-gallery">
-        <img src="media/WhatsApp Image 2026-10-14 at 12.19.14 AM.jpeg"
-             alt="صورتنا الأولى"
-             onclick="openPhoto(this.src)">
+            <div class="quiz-progress">
+                السؤال <span id="quizQuestionNumber">1</span>
+                من <span id="quizTotalQuestions">8</span>
+            </div>
 
-        <img src="media/WhatsApp Image 2026-10-14 at 12.19.23 AM.jpeg"
-             alt="صورتنا الثانية"
-             onclick="openPhoto(this.src)">
+            <div class="quiz-progress-bar">
+                <div id="quizProgressFill"></div>
+            </div>
 
-        <img src="media/WhatsApp Image 2026-10-14 at.jpeg"
-             alt="صورتنا الثالثة"
-             style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
-    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
-             onclick="openPhoto(this.src)">
-             <img src="media/WhatsApp Image 2026-10-19 at 8.27.37 PM.jpeg"
-             alt="صورتنا الرايعه"
-              style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
-    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
-             onclick="openPhoto(this.src)">
-             <img src="media/WhatsApp Image 2026-10-19 at 8.27.38 PM.jpeg"
-             alt="صورتنا الخامسه"
-             onclick="openPhoto(this.src)"
-              style="display: block; width: 90%; max-width: 400px; height: auto; margin: 20px auto;"
-    onerror="this.alt='الصورة لم يتم تحميلها'; console.log('خطأ في تحميل الصورة الثالثة:', this.src);"
+            <h2 id="quizQuestion"></h2>
+
+            <div id="quizOptions" class="quiz-options"></div>
+
+            <p id="quizFeedback" class="quiz-feedback"></p>
+
+            <button id="quizNextButton"
+                    onclick="nextQuizQuestion()"
+                    hidden>
+                السؤال اللي بعده 💕
+            </button>
+
+        </div>
+
+        <div id="quizResult" hidden>
+
+            <div class="quiz-heart">🏆</div>
+
+            <h2>خلصنا اللعبة يا حبايبي ❤️</h2>
+
+            <p id="quizScore"></p>
+
+            <p id="quizFinalMessage"></p>
+
+            <button onclick="startLoveQuiz()">
+                نلعب تاني 🔄
+            </button>
+
+        </div>
+<button onclick="openLoveQuiz()">
+    🎮 مين يعرف التاني أكتر؟
+</button>
+        <button class="quiz-back-button"
+                onclick="closeLoveQuiz()">
+            رجوع للموقع 💗
+        </button>
+
     </div>
 
-    <button onclick="showVideos()">شوفي فيديوهاتنا 🎬❤️</button>
 </section>
+        <script src="script.js"></script>
 
-<!-- صفحة الفيديوهات -->
-<section id="videosPage" hidden>
-    <h2>فيديوهات ذكرياتنا 🎬❤️</h2>
-
-    <div class="video-gallery">
-        <video controls>
-            <source src="media/WhatsApp Video 2026-10-14 at 12.19.13 AM.mp4"
-                    type="video/mp4">
-        </video>
-
-        <video controls>
-            <source src="media/WhatsApp Video 2026-10-14 at 12.19.23 AM.mp4"
-                    type="video/mp4">
-        </video>
-        <video controls>
-            <source src="media/WhatsApp Video 2026-10-19 at 8.27.54 PM.mp4"
-                    type="video/mp4">
-        </video>
-        <video controls>
-            <source src="media/WhatsApp Video 2026-10-19 at 8.28.56 PM.mp4"
-                    type="video/mp4">
-        </video>
-    </div>
-
-    <button onclick="backToPhotos()">الرجوع للصور 📸</button>
-</section>
-
-<!-- تكبير الصور -->
-<div id="photoViewer" onclick="closePhoto()" style="display:none;">
-    <img id="expandedPhoto" alt="صورة مكبرة">
-</div>
-    <script src="script.js"></script>
-
-</body>
-</html>
+    </body>
+    </html>
